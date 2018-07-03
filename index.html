@@ -3,24 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="iconfinder.png" sizes="32x32">
 	<title>André Oliveira - Designer</title>
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
 	<style>
-		body{
+		 body{
 			font-family: 'Ubuntu', sans-serif;
-			max-width: 1200px;
-			margin:  auto;
 			padding: 20px;
-		}
-
-		div{
-			text-align: center;
-		}
-
-		h1{
-			color: #000;
-			font-weight: bold;
-			margin-top: 5rem;
+			display: flex;
+			height: calc(100vh - 56px);
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
 		}
 
 		@media (min-width: 1024px) {
@@ -30,19 +24,37 @@
 		}
 
 		p{
-			color: #F9AF01;
+			color: #ccc;
 		}
 
-		img{
-			width: 80px;
+		picture{
+			display: inline-block;
+			width: 350px;
+			overflow: hidden;
+		} 
+		
+		picture img{
+			width: 100%;
 		}
+
+		picture figcaption{
+			position: absolute;
+			left: -999px;
+		}
+
+		@media (max-width: 413px) {
+			picture{
+				width: auto;
+			}
+		}
+		
 	</style>
 </head>
 <body>
-	<img src="aodesigner.png" alt="Logo André Oliveira - Designer">
-	<div>
-		<h1>André Oliveira</h1>
-		<p>Site em desenvolvimento</p>
-	</div>
+	<p>Site em desenvolvimento</p>
+	<picture>
+		<img src="aodesigner.png" alt="Logo André Oliveira - Designer">
+		<figcaption>André Oliveira - Designer</figcaption>
+	</picture>
 </body>
 </html>
