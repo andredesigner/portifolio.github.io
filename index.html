@@ -25,6 +25,17 @@
 			align-items: center;
 			justify-content: center;
 			flex-direction: column;
+			background-image: url("bg-footer.svg");
+			background-repeat: no-repeat;
+			/* background-position: top right; */
+			background-position: center bottom;
+			background-size: 768px;
+		}
+
+		@media (max-width: 767px) {
+			body{
+				background-size: 100%;
+			}
 		}
 
 		@media (min-width: 1024px) {
@@ -41,8 +52,8 @@
 			display: inline-block;
 			width: 350px;
 			overflow: hidden;
-		} 
-		
+		}
+
 		picture img{
 			width: 100%;
 		}
@@ -57,14 +68,14 @@
 				width: auto;
 			}
 		}
-		
+
 	</style>
 </head>
 <body>
-	<p>Site em desenvolvimento</p>
 	<picture>
-		<img src="aodesigner.png" alt="Logo André Oliveira - Designer">
+		<img src="andre-oliveira.svg" alt="Logo André Oliveira - Designer">
 		<figcaption>André Oliveira - Design</figcaption>
 	</picture>
+	<p>Site em desenvolvimento</p>
 </body>
 </html>
