@@ -40,12 +40,8 @@
 
 		picture{
 			display: inline-block;
-			width: 350px;
+			width: 300px;
 			overflow: hidden;
-		}
-
-		picture img{
-			width: 100%;
 		}
 
 		picture figcaption{
@@ -53,11 +49,6 @@
 			left: -999px;
 		}
 
-		@media (max-width: 413px) {
-			picture{
-				width: auto;
-			}
-		}
 		.position-absolute{
 			position: absolute;
 		}
@@ -97,15 +88,27 @@
 			}
 		}
 
+		.text-center{
+			text-align: center;
+		}
+
+		.wrap-brand{
+			position: fixed;
+			transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%;
+		}
 	</style>
 </head>
 <body>
 	<div class="bg-header position-absolute"></div>
-	<picture>
-		<img src="andre-oliveira.svg" alt="Logo André Oliveira - Designer">
-		<figcaption>André Oliveira - Design</figcaption>
-	</picture>
-	<p>Site em desenvolvimento</p>
+	<div class="wrap-brand text-center">
+		<picture>
+			<img src="andre-oliveira.svg" alt="Logo André Oliveira - Designer">
+			<figcaption>André Oliveira - Design</figcaption>
+		</picture>
+		<p>Site em desenvolvimento</p>
+	</div>
 	<div class="bg-footer-1 position-absolute"></div>
 	<div class="bg-footer-2 position-absolute"></div>
 </body>
