@@ -14,45 +14,59 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link id="favicon" rel="icon" type="image/png" sizes="64x64" href="iconfinder.png">
-		<title>André Oliveira - Designer | Design de Identidade Visual e UX/UI</title>
-		<style> @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap'); </style>
-		<style>
-			html{
-				display: flex;
-			    align-items: center;
-			    justify-content: center;
-			    height: 100%;
-			}
-
-			body{
-				text-align: center;
-				font-family: 'Arial', sans-serif;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-direction: column;
-			}
-
-			p{
-				font-weight: bolder;
-				font-size: 18px;
-				margin-bottom: 10px;
-			}
-
-			svg{
-				margin-top: 40px;
-			}
-		</style>
+		<title>André Oliveira | UX/UI and Visual Identity Designer </title>
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<p>Site em desenvolvimento</p>
-		<div>30%</div>
+		<p>site em desenvolvimento</p>
+		<h1>lançamento em</h1>
+		<div class="countdown">
+			<div class="box" id="days">00</div>
+			<div class="box" id="hours">00</div>
+			<div class="box" id="minutes">00</div>
+			<div class="box" id="seconds">00</div>
+		</div>
 		<svg width="51" height="68" viewBox="0 0 51 68" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path d="M50.3702 41.548C50.0303 27.9532 38.9049 17.0503 25.2191 17.0503C24.9019 17.0503 24.562 17.0503 24.2674 17.0955C23.9955 17.0503 23.7009 17.0503 23.429 17.0503C11.3067 17.0503 1.3142 26.9579 0.113293 39.6479C0.0453173 40.4848 0 41.3444 0 42.2266C0 43.1088 0.0453173 43.9457 0.113293 44.8053C1.3142 57.4726 11.3067 67.3803 23.429 67.3803C23.7009 67.3803 23.9955 67.3803 24.2674 67.335C29.9094 67.1541 35.1209 64.7563 39.0635 60.8883L37.5227 67.3803H50.4155V42.2266C50.4155 42.0004 50.4155 41.7742 50.3702 41.5254V41.548Z" fill="#FFB607"/>
 			<path d="M25.2869 59.3954C33.4335 59.3954 40.0377 51.739 40.0377 42.2945C40.0377 32.8499 33.4335 25.1936 25.2869 25.1936C17.1403 25.1936 10.5361 32.8499 10.5361 42.2945C10.5361 51.739 17.1403 59.3954 25.2869 59.3954Z" fill="white"/>
 			<path d="M31.0651 30.635C31.0651 32.4446 30.1361 34.2994 28.6859 35.3173C26.0122 37.2627 22.4095 36.6972 20.5288 34.0959C18.5802 31.4267 19.1466 27.8301 21.7524 25.9526C23.837 24.437 26.5787 24.437 28.6179 25.9526C30.2041 26.9705 31.0651 28.6896 31.0651 30.635Z" fill="black"/>
 			<path d="M44.6371 8.61305L41.0344 15.4896C36.4573 10.8977 31.0419 8.43209 25.4452 8.43209H24.7655C19.2141 8.61305 13.8667 11.1465 9.35761 15.7384L5.75488 8.86187C17.3334 -2.87802 32.9679 -2.94588 44.5918 8.61305H44.6371Z" fill="black"/>
 		</svg>
+		<script>
+			// Set the date we're counting down to
+			var countDownDate = new Date("Apr 01, 2023 12:30:25").getTime();
 
+			// Update the count down every 1 second
+			var x = setInterval(function() {
+
+			// Get today's date and time
+			var now = new Date().getTime();
+				
+			// Find the distance between now and the count down date
+			var distance = countDownDate - now;
+				
+			// Time calculations for days, hours, minutes and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+				
+			// Output the result in an element
+			document.getElementById("days").innerHTML = days;
+			document.getElementById("hours").innerHTML = hours;
+			document.getElementById("minutes").innerHTML = minutes;
+  			document.getElementById("seconds").innerHTML = seconds;
+    
+			// If the count down is over, write some text 
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("days").innerHTML = "00";
+				document.getElementById("hours").innerHTML = "00";
+				document.getElementById("minutes").innerHTML = "00";
+				document.getElementById("seconds").innerHTML = "00";
+			
+			}
+			}, 1000);
+		</script>
 	</body>
 </html>
