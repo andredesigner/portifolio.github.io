@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html{
+            padding: 0;
+            margin: 0;
+        }
+        .bg{
+            background-color: #F3F3F3;
+            margin: 0;
+            padding: 0;
+            height: 500vh;
+            position: relative;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            align-items: end;
+        }
+
+        .bg h1{
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            font-size: 5vw;
+            position: absolute;
+            white-space: nowrap;
+            color: #000;
+        }
+
+        .bg h1:after{
+            content:attr(data-text);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body style="height: 500vh">
+    <div class="bg">
+        <h1 id="myTxt" data-text="Experiência do usuário e desenho de marca. ">Experiência do usuário e desenho de marca. </h1>
+    </div>
+    <div class="bg" style="background-color: black;"></div>
+    <!-- <h1>Transforms on Scroll</h1>
+    <p>Code from tutorial: <a href="http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript" target="_blank">http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript</a></p>
+
+    <div class="container">
+    <div id="item0" class="item">A</div>
+    <div id="item1" class="item">B</div>
+    </div> -->
+    <script>
+       // Source credit: http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript
+
+        var text = document.getElementById('myTxt');
+        // var leftItem = document.getElementById('item0'),
+        //     rightItem = document.getElementById('item1');
+
+        ;(function(){
+
+            var throttle = function(type, name, obj){
+                var obj = obj || window;
+                var running = false;
+                var func = function(){
+                if (running){ return; }
+                running = true;
+                requestAnimationFrame(function(){
+                    obj.dispatchEvent(new CustomEvent(name));
+                    running = false;
+                });
+                };
+                obj.addEventListener(type, func);
+        };
+        
+        throttle("scroll", "optimizedScroll");
+        })();
+
+        window.addEventListener("optimizedScroll", function(){
+            
+            var move = window.innerHeight/text.offsetWidth;
+            console.log(move);
+            text.style.transform = "translateX(-" + (window.pageYOffset * 2) + "px)";
+        })
+        
+    </script>
+</body>
+</html>

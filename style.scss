@@ -1,3 +1,9 @@
+:root{
+    --yellow-color: #FFB607;
+    --black-color: #000000;
+    --white-color: #ffffff;
+}
+
 html{
     display: flex;
     align-items: center;
@@ -12,7 +18,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #000;
+    color: var(--black-color);
     text-align: center;
 }
 
@@ -20,7 +26,7 @@ p{
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #000000;
+    color: var(--black-color);
     margin-bottom: 0 0 10px 0;
 }
 
@@ -49,8 +55,8 @@ h1{
         line-height: 60px;
         font-size: 24px;
         font-weight: bold;
-        background-color: #000;
-        color: #FFB607;
+        background-color: var(--black-color);
+        color: var(--yellow-color);
         position: relative;
 
         &:after{
@@ -59,14 +65,14 @@ h1{
             line-height: 21px;
             color: #BDBDBD;
             @media (min-width: 768px) {
-                color: #ffffff;
+                color: var(--white-color);
             }
             font-weight: 400;
         }
 
         &:before{
             content: ":";
-            color: #000;
+            color: var(--black-color);
             font-size: 24px;
             display: block;
             position: absolute;
@@ -74,8 +80,8 @@ h1{
         }
         
         &#days{
-            background-color: #FFB607;
-            color: #000;
+            background-color: var(--yellow-color);
+            color: var(--black-color);
 
             &:after{
                 content: "dias";
@@ -116,4 +122,54 @@ svg{
 .data{
     width: 100%;
     margin-top: 40px;
+}
+
+#a,
+#palpebra{
+    fill: var(--yellow-color);
+}
+
+#palpebra{
+    animation: piscaPalpebra 3s infinite;
+}
+
+#pupila,
+#sombrancelha{
+    fill: var(--black-color);
+}
+
+#pupila{
+    animation: movePupila 6s infinite;
+}
+
+// @keyframes piscaPalpebra {
+//     from{
+//         opacity: 1;
+//     }
+
+//     to{
+//         opacity: 0;
+//     }
+// }
+
+@keyframes movePupila {
+    0%{
+        translate: 0 0;
+    }
+
+    10%{
+        translate: 0 -5px;
+    }
+
+    60%{
+        translate: 0 -5px;
+    }
+
+    80%{
+        translate: 0 0;
+    }
+
+    100%{
+        translate: 0 0;
+    }
 }
