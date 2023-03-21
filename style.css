@@ -131,18 +131,18 @@ svg {
 
 @keyframes movePupila {
   0% {
-    translate: 0 0;
+    transform: translateY(0);
   }
-  10% {
-    translate: 0 -5px;
+  20% {
+    transform: translateY(0);
   }
-  60% {
-    translate: 0 -5px;
+  28% {
+    transform: translateY(-5px);
   }
   80% {
-    translate: 0 0;
+    transform: translateY(-5px);
   }
   100% {
-    translate: 0 0;
+    transform: translateY(0);
   }
 }/*# sourceMappingURL=style.css.map */
