@@ -15,12 +15,14 @@
             background-color: #F3F3F3;
             margin: 0;
             padding: 0;
-            height: 500vh;
+            /* height: 500vh; */
             position: relative;
             padding: 20px;
+            /* height: 200vh; */
             height: 100vh;
             display: flex;
-            align-items: end;
+            /* align-items: end; */
+            overflow: hidden;
         }
 
         .bg h1{
@@ -36,13 +38,91 @@
             content:attr(data-text);
             display: inline-block;
         }
+
+        #auto-slide{
+            animation: scroll-right-to-left 20s linear infinite;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            width: fit-content;
+            will-change: transform;
+        }
+
+        @keyframes scroll-right-to-left {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        h3{
+            -webkit-background-clip: text;
+            background-image: linear-gradient( 90deg, #D300C5, #FF0069, #FF7A00 );
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            font-size: 250px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .bg #circle{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            border-radius: 50% 50%;
+            border: 4px dashed black;
+        }
+
+        .link-menu{
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            padding: 10px 20px;
+            background-color: white;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            border-radius: 100px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(2px);
+            /* Note: backdrop-filter has minimal browser support */
+        }
+
+        #logo-ao{
+            position: sticky;
+            top: 50%;
+        }
     </style>
 </head>
 <body style="height: 500vh">
     <div class="bg">
+        <svg id="logo-ao" width="41" height="62" viewBox="0 0 41 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="21" cy="41" r="15" fill="white"/>
+            <path d="M20.4769 20.3848C9.18538 20.3848 0 29.4942 0 40.6925C0 46.6444 0.753708 50.7241 2.44427 53.9166C4.15596 57.151 7.7484 61.0072 15.0953 61.0072C20.336 61.0072 26.408 59.0442 31.374 55.7469V60.2038H40.9538V40.6925C40.9538 29.4942 31.7685 20.3848 20.4769 20.3848ZM9.57984 40.6925C9.57984 34.7336 14.4684 29.8855 20.4769 29.8855C26.4854 29.8855 31.374 34.7336 31.374 40.6925C31.374 42.921 29.4369 45.5616 26.1896 47.7481C22.8155 50.0255 18.4553 51.4995 15.0883 51.4995C12.2213 51.4995 11.4324 50.4656 10.9182 49.4876C10.0095 47.7761 9.5728 44.8979 9.5728 40.6855" fill="#FFB607"/>
+            <path d="M20.4766 45.5125C23.1609 45.5125 25.3369 43.3544 25.3369 40.6923C25.3369 38.0301 23.1609 35.8721 20.4766 35.8721C17.7923 35.8721 15.6162 38.0301 15.6162 40.6923C15.6162 43.3544 17.7923 45.5125 20.4766 45.5125Z" fill="#3A352A"/>
+            <path d="M40.9609 20.3077H31.381C31.381 14.3488 26.4925 9.50069 20.484 9.50069C14.4754 9.50069 9.58689 14.3488 9.58689 20.3077H0C0 9.10948 9.18538 0 20.4769 0C31.7684 0 40.9538 9.10948 40.9538 20.3077H40.9609Z" fill="black"/>
+        </svg>            
         <h1 id="myTxt" data-text="Experiência do usuário e desenho de marca. ">Experiência do usuário e desenho de marca. </h1>
     </div>
-    <div class="bg" style="background-color: black;"></div>
+    <div class="bg" style="background-color: black;">
+        <h1 id="auto-slide" data-text=" Experiência do usuário e desenho de marca." style="color: #fff">Experiência do usuário e desenho de marca. </h1>
+    </div>
+    <div class="bg">
+        <h3>Home</h3>
+    </div>
+    <div class="bg">
+        <div id="circle"></div>
+    </div>
+    <div class="bg" style="background-color: black; align-items: start;">
+        <ul>
+            <li><a class="link-menu" href="">Sobre</a></li>
+        </ul>
+    </div>
     <!-- <h1>Transforms on Scroll</h1>
     <p>Code from tutorial: <a href="http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript" target="_blank">http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript</a></p>
 
@@ -53,7 +133,8 @@
     <script>
        // Source credit: http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript
 
-        var text = document.getElementById('myTxt');
+        var text = document.getElementById('myTxt'),
+            circle = document.getElementById('circle');
         // var leftItem = document.getElementById('item0'),
         //     rightItem = document.getElementById('item1');
 
@@ -81,6 +162,7 @@
             var move = window.innerHeight/text.offsetWidth;
             console.log(move);
             text.style.transform = "translateX(-" + (window.pageYOffset * 2) + "px)";
+            circle.style.transform = "rotate(" + (window.pageYOffset/5) + "deg)";
         })
         
     </script>
