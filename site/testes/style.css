@@ -1,0 +1,160 @@
+/*Reset*/
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol, li, dl, dt, dd, form, a, fieldset, input, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+body {
+  font-size: 88%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  padding: 0.6em 0;
+  margin: 0 15px;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  min-width: 100%;
+  display: block;
+}
+
+html {
+  color: #3A352A;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.p-fixed {
+  position: fixed;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.a-self-center {
+  align-self: center;
+}
+
+.j-self-center {
+  justify-self: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.col-4 {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.col-2 {
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+.col-1 {
+  width: 100%;
+}
+
+.section-page {
+  padding: 20px;
+  min-height: 100vh;
+}
+.section-page.first-section-page {
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 80dvh;
+  margin-bottom: 20vh;
+  padding-bottom: 40px;
+}
+.section-page .logo-typography {
+  margin: 39px 0 0 45px;
+}
+.section-page h1 {
+  font-style: normal;
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+.section-page h2 {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+  padding: 0;
+  margin: 0;
+}
+.section-page h3 {
+  font-size: 5vw;
+  text-align: center;
+  position: sticky;
+  top: 52px;
+}
+.section-page .wrap-nav {
+  position: sticky;
+  margin: auto;
+  grid-row-start: 5;
+}
+
+.wrap-logo-symbol {
+  top: 40px;
+  left: 20px;
+}
+.wrap-logo-symbol svg {
+  width: 31.56px;
+  height: 47px;
+}
+
+.wrap-nav {
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  justify-self: center;
+  align-self: center;
+}
+
+.nav-page {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  -moz-backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  -moz-backdrop-filter: blur(15px);
+  border-radius: 100px;
+  padding: 5px;
+}
+.nav-page .item-nav {
+  width: 100%;
+}
+.nav-page .item-nav a {
+  display: block;
+  padding: 14px 0;
+  text-align: center;
+  font-size: 20px;
+  text-decoration: none;
+  color: #3A352A;
+  font-weight: 700;
+}
+.nav-page .item-nav a.active {
+  background-color: #FFB607;
+  border-radius: 100px;
+  color: #3A352A;
+}/*# sourceMappingURL=style.css.map */
