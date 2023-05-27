@@ -173,3 +173,43 @@ html{
         }
     }
 }
+
+/* loading */
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+
+    &:before{
+        content: "";
+        background-color: #FFB607;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .eye-pupil{
+        background-color: #000;
+        width: 170px;
+        height: 170px;
+        border-radius: 170px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .amount-loaded{
+        font-size: 96px;
+        color: #000;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-family: $brand-font;
+        font-weight: $brand-font-medium;
+    }
+}
